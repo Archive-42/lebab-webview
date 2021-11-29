@@ -1,0 +1,48 @@
+{
+  "name": "lebabnuxt",
+  "version": "1.4.3",
+  "description": "Nuxt.js project",
+  "author": "Uni Sayo <unibtc@gmail.com>",
+  "contributors": [
+    "vhanni <bayanipsayoiii@gmail.com>"
+  ],
+  "main": "nuxt.config.js",
+  "scripts": {
+    "clean": "rimraf dist .nuxt build docs && npm run lint",
+    "dev": "nuxt",
+    "build": "npm run clean && nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "analyze": "nuxt build -a",
+    "lint": "eslint --fix --ext .js,.vue .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.0.4",
+    "markdown-it": "^10.0.0",
+    "node-fetch": "^2.6.0",
+    "nuxt": "^2.4.5",
+    "unfetch": "^4.1.0",
+    "snyk": "^1.239.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^7.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-vue": "^7.2.0",
+    "node-sass": "^4.11.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.1.0",
+
+    "vue-codemirror": "^4.0.6"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/uniibu/lebab-ce",
+  "bugs": {
+    "url": "https://github.com/uniibu/lebab-ce/issues"
+  },
+  "homepage": "https://uniibu.github.io/lebab-ce",
+  "snyk": true
+}
