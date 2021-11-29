@@ -87,8 +87,12 @@ body {
   top: 7px;
 }
 
-.cm-topminify .custom-control.custom-checkbox.custom-control-inline label.custom-control-label,
-.cm-topminify-es2015 .custom-control.custom-checkbox.custom-control-inline label.custom-control-label {
+.cm-topminify
+  .custom-control.custom-checkbox.custom-control-inline
+  label.custom-control-label,
+.cm-topminify-es2015
+  .custom-control.custom-checkbox.custom-control-inline
+  label.custom-control-label {
   font-size: 14px;
 }
 
@@ -133,7 +137,7 @@ body {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .page-enter,
@@ -152,7 +156,7 @@ body {
     color: #f5da55;
     font-size: 2.2em;
     font-weight: 400;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     margin-bottom: 100px;
 
     @media (min-width: 768px) {
@@ -172,7 +176,7 @@ body {
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem rgba(245, 218, 85, .5);
+      box-shadow: 0 0 0 0.2rem rgba(245, 218, 85, 0.5);
     }
   }
 }
@@ -203,8 +207,7 @@ body {
     &:hover {
       color: darken(#f5da55, 25%);
     }
-   }
-
+  }
 }
 
 .logo {

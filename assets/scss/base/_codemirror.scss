@@ -20,7 +20,8 @@
   /* Horizontal padding of content */
 }
 
-.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
   background-color: white;
   /* The little square between H and V scrollbars */
 }
@@ -32,8 +33,6 @@
   background-color: #f7f7f7;
   white-space: nowrap;
 }
-
-
 
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
@@ -93,38 +92,40 @@
 }
 
 @-moz-keyframes blink {
-  0% {}
+  0% {
+  }
 
   50% {
     background-color: transparent;
   }
 
-  100% {}
+  100% {
+  }
 }
-
 
 @-webkit-keyframes blink {
-  0% {}
+  0% {
+  }
 
   50% {
     background-color: transparent;
   }
 
-  100% {}
+  100% {
+  }
 }
-
 
 @keyframes blink {
-  0% {}
+  0% {
+  }
 
   50% {
     background-color: transparent;
   }
 
-  100% {}
+  100% {
+  }
 }
-
-
 
 .cm-tab {
   display: inline-block;
@@ -166,7 +167,8 @@
   color: #292;
 }
 
-.cm-header, .cm-strong {
+.cm-header,
+.cm-strong {
   font-weight: bold;
 }
 
@@ -199,7 +201,8 @@
   .cm-variable-2 {
     color: #05a;
   }
-  .cm-variable-3, .cm-type {
+  .cm-variable-3,
+  .cm-type {
     color: #085;
   }
   .cm-comment {
@@ -211,7 +214,8 @@
   .cm-string-2 {
     color: #f50;
   }
-  .cm-meta, .cm-qualifier {
+  .cm-meta,
+  .cm-qualifier {
     color: #555;
   }
   .cm-builtin {
@@ -298,7 +302,10 @@ div.CodeMirror span {
    before actual scrolling happens, thus preventing shaking and
    flickering artifacts. */
 
-.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+.CodeMirror-vscrollbar,
+.CodeMirror-hscrollbar,
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
   position: absolute;
   z-index: 6;
   display: none;
@@ -365,7 +372,8 @@ div.CodeMirror span {
 }
 
 .CodeMirror-gutter-wrapper {
-  ::selection, ::-moz-selection {
+  ::selection,
+  ::-moz-selection {
     background-color: transparent;
   }
 }
@@ -420,7 +428,6 @@ div.CodeMirror span {
   /* Force widget margins to stay inside of the container */
 }
 
-
 .CodeMirror-rtl pre {
   direction: rtl;
 }
@@ -431,7 +438,11 @@ div.CodeMirror span {
 
 /* Force content-box sizing for the elements where we expect it */
 
-.CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber {
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -485,7 +496,8 @@ div {
     background: #d7d4f0;
   }
   > span {
-    &::selection, > span::selection {
+    &::selection,
+    > span::selection {
       background: #d7d4f0;
     }
   }
@@ -493,7 +505,8 @@ div {
     background: #d7d4f0;
   }
   > span {
-    &::-moz-selection, > span::-moz-selection {
+    &::-moz-selection,
+    > span::-moz-selection {
       background: #d7d4f0;
     }
   }
@@ -507,7 +520,7 @@ div {
 /* Used to force a border model for a node */
 
 .cm-force-border {
-  padding-right: .1px;
+  padding-right: 0.1px;
 }
 
 @media print {
@@ -520,7 +533,7 @@ div {
 /* See issue #2901 */
 
 .cm-tab-wrap-hack:after {
-  content: '';
+  content: "";
 }
 
 /* Help users use markselection to safely style text background */

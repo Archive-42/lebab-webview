@@ -4,7 +4,10 @@
       <b-row>
         <b-col md="6">
           <h1>Still coding like this?</h1>
-          <p>This code is fine. There's nothing wrong with it. It's clean and understandable. But it's just a little old :/</p>
+          <p>
+            This code is fine. There's nothing wrong with it. It's clean and
+            understandable. But it's just a little old :/
+          </p>
         </b-col>
         <b-col md="6">
           <div class="cm-topbar">
@@ -12,10 +15,7 @@
             <div class="cm-toptwo" />
             <div class="cm-topthree" />
           </div>
-          <codemirror
-            v-model="defaultCode"
-            :options="cmOption"
-            class="a" />
+          <codemirror v-model="defaultCode" :options="cmOption" class="a" />
         </b-col>
       </b-row>
     </b-container>
@@ -26,9 +26,8 @@ export default {
   data() {
     return {
       defaultCode: this.$store.state.defaultCode,
-      cmOption: this.$store.state.codemirrorOpts
+      cmOption: this.$store.state.codemirrorOpts,
     };
-  }
+  },
 };
 </script>
-

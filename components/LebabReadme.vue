@@ -3,18 +3,18 @@
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {
-      model: ''
+      model: "",
     };
   },
-  created(){
-    fetch('https://cdn.staticaly.com/gh/lebab/lebab/master/README.md')
-      .then(r => r.text())
+  created() {
+    fetch("https://cdn.staticaly.com/gh/lebab/lebab/master/README.md")
+      .then((r) => r.text())
       .then((res) => {
-        res = res.replace(/http:/g, 'https:');
+        res = res.replace(/http:/g, "https:");
         this.model = res;
       });
-  }
+  },
 };
 </script>

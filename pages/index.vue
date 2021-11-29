@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import AppSection from '~/components/AppSection.vue';
-import AppSecondSection from '~/components/AppSecondSection.vue';
-import AppThirdSection from '~/components/AppThirdSection.vue';
+import AppSection from "~/components/AppSection.vue";
+import AppSecondSection from "~/components/AppSecondSection.vue";
+import AppThirdSection from "~/components/AppThirdSection.vue";
 export default {
   components: {
     AppSection,
     AppSecondSection,
-    AppThirdSection
-  }
+    AppThirdSection,
+  },
 };
 </script>

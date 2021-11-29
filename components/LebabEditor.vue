@@ -9,7 +9,8 @@
           <b-form-checkbox
             id="checkboxminify"
             v-model="minified"
-            @input="toNewCode">
+            @input="toNewCode"
+          >
             Minify(babili)
           </b-form-checkbox>
         </div>
@@ -17,7 +18,8 @@
           <b-form-checkbox
             id="checkboxtranspile"
             v-model="transpiled"
-            @input="toNewCode">
+            @input="toNewCode"
+          >
             Transpile(babel)
           </b-form-checkbox>
         </div>
@@ -25,7 +27,8 @@
           <a
             href="https://github.com/lebab/lebab"
             rel="noopener"
-            target="_blank">
+            target="_blank"
+          >
             <b-img :src="lebabSemver" />
           </a>
           <b-dropdown
@@ -33,7 +36,8 @@
             size="sm"
             class="mx-1 my-1"
             text="Options"
-            right>
+            right
+          >
             <b-dropdown-header>Safe Transforms</b-dropdown-header>
             <b-form-group class="lb-optionsbox">
               <b-form-checkbox-group
@@ -43,7 +47,8 @@
                 class="lb-optionsbox"
                 stacked
                 name="Optionssafe"
-                @input="toNewCode" />
+                @input="toNewCode"
+              />
             </b-form-group>
             <b-dropdown-header>Unsafe Transforms</b-dropdown-header>
             <b-form-group class="lb-optionsbox">
@@ -54,7 +59,8 @@
                 class="lb-optionsbox"
                 stacked
                 name="Optionsunsafe"
-                @input="toNewCode" />
+                @input="toNewCode"
+              />
             </b-form-group>
           </b-dropdown>
         </div>
@@ -64,7 +70,8 @@
         :options="cmOption"
         class="mb-4"
         @ready="toNewCode"
-        @input="toNewCode" />
+        @input="toNewCode"
+      />
     </b-col>
     <b-col md="6">
       <div class="cm-topbar">
@@ -73,10 +80,7 @@
         <div class="cm-topthree" />
       </div>
 
-      <codemirror
-        v-model="newcode"
-        :options="cmOption2"
-        class="mb-4" />
+      <codemirror v-model="newcode" :options="cmOption2" class="mb-4" />
     </b-col>
   </b-row>
 </template>
@@ -84,7 +88,7 @@
 export default {
   data() {
     let code = this.$store.state.defaultCode;
-    let newcode = '';
+    let newcode = "";
     return {
       lebabSemver: `https://img.shields.io/badge/lebab-${process.env.lebab}-brightgreen.svg`,
       code,
@@ -93,31 +97,50 @@ export default {
       transpiled: false,
       lebabOptions: this.$store.state.lebabDefaultOpts,
       OptionsSafe: this.generateOptions([
-        'arrow', 'arrow-return', 'for-of', 'for-each', 'arg-rest', 'obj-method', 'obj-shorthand', 'no-strict', 'exponent', 'multi-var'
+        "arrow",
+        "arrow-return",
+        "for-of",
+        "for-each",
+        "arg-rest",
+        "obj-method",
+        "obj-shorthand",
+        "no-strict",
+        "exponent",
+        "multi-var",
       ]),
       OptionsUnsafe: this.generateOptions([
-        'let', 'class', 'commonjs', 'template', 'default-param', 'destruct-param', 'includes'
+        "let",
+        "class",
+        "commonjs",
+        "template",
+        "default-param",
+        "destruct-param",
+        "includes",
       ]),
-      cmOption: this.generateCmOptions({ keyMap: 'sublime', matchBrackets: true, readOnly: false }),
-      cmOption2: this.generateCmOptions({ matchBrackets: true })
+      cmOption: this.generateCmOptions({
+        keyMap: "sublime",
+        matchBrackets: true,
+        readOnly: false,
+      }),
+      cmOption2: this.generateCmOptions({ matchBrackets: true }),
     };
   },
   methods: {
-    generateCmOptions(opts){
+    generateCmOptions(opts) {
       const cmOpts = this.$store.state.codemirrorOpts;
-      for(const [ key, value ] of Object.entries(opts)){
+      for (const [key, value] of Object.entries(opts)) {
         cmOpts[key] = value;
       }
       return cmOpts;
     },
-    generateOptions(opts){
-      return opts.map(o => ({ text: o, value: o }));
+    generateOptions(opts) {
+      return opts.map((o) => ({ text: o, value: o }));
     },
     transpileCode(code) {
       if (this.transpiled || this.minified) {
         return window.babel2Fstandalone.transform(code, {
-          presets: this.transpiled ? [ 'es2015' ]: null,
-          minified: this.minified
+          presets: this.transpiled ? ["es2015"] : null,
+          minified: this.minified,
         }).code;
       }
     },
@@ -126,13 +149,13 @@ export default {
         let { code } = window.lebab.transform(oldcode, this.lebabOptions);
         return this.transpileCode(code) || code;
       } catch (err) {
-        console.log('SyntaxError', err.message);
+        console.log("SyntaxError", err.message);
         return this.newcode;
       }
     },
-    toNewCode(){
+    toNewCode() {
       this.newcode = this.lebabTransform(this.code);
-    }
-  }
+    },
+  },
 };
 </script>

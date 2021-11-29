@@ -11,30 +11,14 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": [
-    "plugin:vue/recommended"
-  ],
-  "plugins": [
-    "vue"
-  ],
+  "extends": ["plugin:vue/recommended"],
+  "plugins": ["vue"],
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
     "no-console": "off",
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
     "no-multiple-empty-lines": [
       "error",
       {
@@ -42,20 +26,14 @@
       }
     ],
     "brace-style": "error",
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
+    "object-curly-spacing": ["error", "always"],
     "array-bracket-newline": [
       "error",
       {
         "minItems": 3
       }
     ],
-    "array-bracket-spacing": [
-      "error",
-      "always"
-    ],
+    "array-bracket-spacing": ["error", "always"],
     "prefer-destructuring": [
       "error",
       {
